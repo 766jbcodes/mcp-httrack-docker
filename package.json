@@ -1,0 +1,49 @@
+{
+  "name": "htttrack-mcp-mvp",
+  "version": "1.0.0",
+  "description": "HTTrack-MCP MVP - Automated website crawling and local serving",
+  "main": "dist/server.js",
+  "scripts": {
+    "start": "ts-node src/server.ts",
+    "dev": "nodemon src/server.ts",
+    "build": "tsc",
+    "start:prod": "node dist/server.js",
+    "lint": "eslint \"src/**/*.ts\"",
+    "lint:fix": "npm run lint -- --fix",
+    "format": "prettier --write \"**/*.{ts,js,json,md,yml}\"",
+    "clean": "rimraf dist downloads",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "httrack",
+    "website",
+    "crawler",
+    "mirror",
+    "local-server"
+  ],
+  "author": "HTTrack-MCP Team",
+  "license": "MIT",
+  "dependencies": {
+    "@types/jsdom": "^21.1.7",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "jsdom": "^26.1.0",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.0.0",
+    "@types/uuid": "^9.0.1",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.0",
+    "eslint": "^9.2.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "prettier": "^3.2.5",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.0",
+    "rimraf": "^5.0.5"
+  }
+}

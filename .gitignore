@@ -1,0 +1,21 @@
+# Node & TypeScript
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Runtime artefacts
+downloads/
+.env
+*.log
+npm-debug.log*
+
+# Editor config
+.idea/
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Coverage
+coverage/

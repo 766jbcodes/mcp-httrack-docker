@@ -1,0 +1,13 @@
+# Exclude files & folders not needed in the image
+node_modules
+.git
+dist
+downloads
+coverage
+*.log
+*.tsbuildinfo
+.idea
+.vscode
+
+# Ignore local test scripts
+*.ps1 

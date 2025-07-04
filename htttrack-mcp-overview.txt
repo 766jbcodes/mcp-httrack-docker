@@ -1,0 +1,42 @@
+HTTTRACK-MCP SERVER OVERVIEW
+===========================
+
+1. Project Context and Goals
+---------------------------
+Modern whitelabel financial calculators require rapid, accurate branding for each client. When clients do not provide brand assets directly, we need a reliable, automated way to extract colours, fonts, logos, and layout details from their public websites. This ensures a consistent, high-quality user experience and streamlines onboarding.
+
+2. Role of HTTrack in the Workflow
+----------------------------------
+HTTrack is used as a research tool to download a complete copy of a client's public website, including CSS, images, and fonts. This local copy provides the raw material for automated scripts to analyse and extract brand assets. HTTrack is not used as a theming engine, but as a source of truth for brand analysis.
+
+3. Recommendation: htttrack-mcp Server
+--------------------------------------
+To standardise and automate the asset extraction process, we will build an "htttrack-mcp" server. This server will:
+- Accept crawl requests via a REST API
+- Run HTTrack to download the target website
+- Analyse the downloaded assets to extract branding information (colours, fonts, logos, etc.)
+- Return structured results for use in theming and UI generation
+
+4. Technical Plan Summary
+-------------------------
+**API Design:**
+- POST /crawl
+  - Input: JSON with target URL and crawl options
+  - Output: Job ID
+- GET /result/{job_id}
+  - Output: JSON with extracted brand assets (colours, fonts, logo paths, etc.)
+
+**Architecture:**
+- Node.js/TypeScript server (for cross-platform compatibility)
+- Runs HTTrack CLI as a child process
+- Post-processing scripts analyse the output directory for brand assets
+- Results are stored and served via the API
+
+**Implementation Steps:**
+1. Set up Node.js/TypeScript project and REST API endpoints
+2. Implement job queue and HTTrack CLI integration
+3. Develop asset extraction scripts (colours, fonts, logos)
+4. Store and serve results via API
+5. Test end-to-end with real client sites
+
+This approach provides a repeatable, scalable solution for automated brand asset extraction, supporting rapid onboarding and consistent quality across all client calculators. 
